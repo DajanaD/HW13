@@ -1,3 +1,5 @@
+from typing import Union
+
 from libgravatar import Gravatar
 from sqlalchemy.orm import Session
 
