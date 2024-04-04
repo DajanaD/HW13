@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 from src.routes import contacts, auth
-from src.routes import contacts
+
 
 app = FastAPI()
 
