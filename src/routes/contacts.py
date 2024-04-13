@@ -14,8 +14,8 @@ router = APIRouter(prefix='/notes', tags=["notes"])
 
 # Отримати всі контакти
 @router.get("/", response_model=List[Contact])
-async def read_contacts(db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
-    contacts = await repository_contacts.get_contacts(db, current_user)
+async def read_contacts(skip: int = 0, limit: int = 100, db: Session = Depends(get_db), current_user: User = Depends(auth_service.get_current_user)):
+    contacts = await repository_contacts.get_contacts(skip, limit, db, current_user)
     return contacts
 
 # Отримати контакт за ідентифікатором

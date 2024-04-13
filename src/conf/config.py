@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     REDIS_DOMAIN: str = 'localhost'
     REDIS_PORT: int = 6379
     REDIS_PASSWORD: str
+    CLOUDINARY_NAME=cloud_name
+    CLOUDINARY_API_KEY=12345678
+    CLOUDINARY_API_SECRET=api_secret
+
 
     model_config = ConfigDict(env_file = ".env", env_file_encoding = "utf-8")
 
